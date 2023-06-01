@@ -2,7 +2,7 @@
 - react
 - react-router-dom
 - hooks
-- Can you view [My Project](https://kadirov-Fariddun.github.io/mpliga)
+- Can you view [My Project](http://www.mpliga.uz/)
 
 ### BackEnd 
 - python 
