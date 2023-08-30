@@ -10,5 +10,5 @@
 
 # Athors
 - FrontEnd dev: Kadirov Fariddun 
-- BackEnd dev: Jurayev Zafar
+- BackEnd dev: Jurayev Zafar and Komil Tuev
 (2023)
