@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/static/css/main.4565c079.css",
+    "main.js": "/static/js/main.8ba8d6c3.js",
+    "static/js/787.d379f784.chunk.js": "/static/js/787.d379f784.chunk.js",
+    "static/media/mpliga.png": "/static/media/mpliga.87263fdccbbebe7a85d0.png",
+    "static/media/fire.gif": "/static/media/fire.1f683f26f37bb352f7b7.gif",
+    "static/media/news-football.jpg": "/static/media/news-football.02fcf8560140833f797a.jpg",
+    "static/media/6.jpg": "/static/media/6.f7557ac54e6c10f0ad8d.jpg",
+    "static/media/3.jpg": "/static/media/3.c1562c2c5ab2251b03b6.jpg",
+    "static/media/4.jpg": "/static/media/4.92b5652ba0a2c51422e0.jpg",
+    "static/media/logo.png": "/static/media/logo.f7e3c0267115276dae80.png",
+    "static/media/1.jpg": "/static/media/1.6e2cd23dfbf81247fccf.jpg",
+    "static/media/9.jpg": "/static/media/9.270f0ddc84b7faef3a43.jpg",
+    "static/media/red-card.png": "/static/media/red-card.ed56f58fea92f5bdcfd5.png",
+    "static/media/kengash-qarori.jpg": "/static/media/kengash-qarori.008a3369bc4cd9b3c5ff.jpg",
+    "static/media/star.png": "/static/media/star.6ad9c8887dfe414cafc1.png",
+    "static/media/elite.jpg": "/static/media/elite.1acbdee77505588f5e43.jpg",
+    "static/media/yellow-card.png": "/static/media/yellow-card.32c9e6a9bba00367c2d3.png",
+    "static/media/5.jpg": "/static/media/5.0d2e6ecf78e4ffe8d3c2.jpg",
+    "static/media/8.jpg": "/static/media/8.b1501cd70368dd9bf2aa.jpg",
+    "static/media/10.jpg": "/static/media/10.848f724ac10b80147616.jpg",
+    "static/media/7.jpg": "/static/media/7.cbc7feebffa2f9be2164.jpg",
+    "static/media/ball.png": "/static/media/ball.ee55f3ea9616439b3978.png",
+    "index.html": "/index.html",
+    "main.4565c079.css.map": "/static/css/main.4565c079.css.map",
+    "main.8ba8d6c3.js.map": "/static/js/main.8ba8d6c3.js.map",
+    "787.d379f784.chunk.js.map": "/static/js/787.d379f784.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4565c079.css",
+    "static/js/main.8ba8d6c3.js"
+  ]
+}

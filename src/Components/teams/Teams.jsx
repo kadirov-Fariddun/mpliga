@@ -3,6 +3,10 @@ import axios from 'axios';
 import { NavLink } from 'react-router-dom';
 import Preloader from '../home/Preloader';
 import teamLogo from '../../img/mpliga.png';
+import pozitivLogo from '../../img/pozitiv/logo.png';
+import eliteJpg from "../../img/elite.jpg";
+import { Helmet } from 'react-helmet';
+
 
 export default function Teams() {
   const URL = 'https://ligaeuropa.pythonanywhere.com/api/v1/';
@@ -21,15 +25,32 @@ export default function Teams() {
     getData('aboutplayer/', setDataAboutPlayer);
     getData('club/', setClubs);
   }, []);
-
+console.log(clubs);
 
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>MPLiga jamoalari</title>
+        <meta name='title' content='Mahalliy Premier Liga Jamoalari' />
+        <meta name="description" content="MPLiga barcha jamoalari bilan faqat ushbu rasmiy saytda tanishing" />
+      </Helmet>
       <div className="teams">
         <Preloader data={clubs} />
         <div className="tp">
           <div className="container">
             <div className="teams-flex">
+              < NavLink to={`/club-${12}`} key={12} className='team-link'>
+                <div className="team">
+                  <div className="team-image">
+                    <img src={eliteJpg} alt="team-logo" width='150px' />
+                  </div>
+                  <div className="team-title">
+                    <p>MPL Yulduzlari</p>
+                    <span>Uzbekiston</span>
+                  </div>
+                </div>
+              </NavLink>
               {
                 clubs.map((club) => {
                   return (
@@ -37,7 +58,7 @@ export default function Teams() {
                       < NavLink to={`/club-${club.id}`} key={club.id} className='team-link'>
                         <div className="team">
                           <div className="team-image">
-                            <img src={teamLogo} alt="team-logo" width='150px' />
+                            <img src={club.id === 24? pozitivLogo:teamLogo} alt="team-logo" width='150px' />
                           </div>
                           <div className="team-title">
                             <p>{club.name}</p>

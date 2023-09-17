@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { NavLink } from 'react-router-dom';
 import Preloader from '../home/Preloader';
+import { Helmet } from 'react-helmet';
 
 export default function News() {
 
@@ -21,6 +22,12 @@ export default function News() {
 
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>MPLiga Yangiliklari</title>
+        <meta name='title' content='Mahalliy Premier Liga Yangiliklari' />
+        <meta name="description" content="MPLiga so'ngi yangiliklaridan ushbu sayt orqali birinchilardan bo'lib boxabar bo'ling" />
+      </Helmet>
       <div className="news">
         <div className="tp">
           <div className="container">

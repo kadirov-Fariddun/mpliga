@@ -5,6 +5,8 @@ export default function Player(props) {
   const [progressBar, setProgressBar] = useState([]);
   const [progressBarHover, setProgressBarHover] = useState([]);
   const [starCursor, setStarCursor] = useState(false);
+  const [disModalClose, setDisModalClose] = useState('');
+  const [disModalCloseReq, setDisModalCloseReq] = useState(false);
   const navigate = useNavigate();
   const goBack = () => navigate(-1);
 
@@ -85,7 +87,7 @@ export default function Player(props) {
                   <div><span>Isim Familiyasi:</span><span>{props.lastName} {props.firstName}</span></div>
                   <div><span>Yoshi:</span><span>{props.age}</span></div>
                   <div><span>Millati:</span><span><img src={props.clubLogo} alt="Uzbekistan" width="30px" height="15px" /> Uzbekiston</span></div>
-                  <div><span>Jamoasi:</span><NavLink to='/teams'>{props.clubName}</NavLink></div>
+                  <div><span>Jamoasi:</span>{props.id === 26?'Erkin agent':<NavLink to='/teams'>{props.clubName}</NavLink>}</div>
                   <div><span>Gollari:</span><span>{props.goals}</span></div>
                   <div><span><img src={props.srcYellowCard} alt="yellow-card" width="auto" height="40px" /></span><span>{props.yellowCard}</span></div>
                   <div><span><img src={props.srcRedCard} alt="red-card" width="auto" height="40px" /></span><span>{props.redCard}</span></div>
@@ -109,6 +111,30 @@ export default function Player(props) {
                       <span>{props.like}</span>
                     </div>
                   </div>
+                  {
+                    props.id === 14 ||props.id ===134||props.id===135 ?
+                      <div className={`diskvalifikation-modal ${disModalClose}`}>
+                        <div className="diskvalifikation-modal-info">
+                          <h3>Bu o'yinchi {props.id === 14||props.id ===134 ? '(2 - tur)' :props.id === 135 ? '(1 - tur)':''}ga Diskvalifikatsiya qilingan</h3>
+                          <div className="diskvalifikation-modal-flex">
+                            <button className="diskvalifikation-btn">
+                              <a href="http://mpliga.uz/#/news-34">
+                                Sababini bilmoqchiman
+                              </a>
+                            </button>
+                            <button className="diskvalifikation-ok" onClick={() => {
+                              setDisModalClose('diskvalifikation-modal-close');
+                              setDisModalCloseReq(true);
+                            }
+                            }>OK</button>
+                          </div>
+                        </div>
+                      </div> : ''
+                  }
+                  {
+                    disModalCloseReq ?
+                      <div className="dis-info">eslatib o'tamiz diskvalifikatsiya reyting tushishiga sabab bo'ladi</div> : ''
+                  }
                 </div>
               </div>
             </div>

@@ -5,10 +5,10 @@ import winPng from '../../img/win.png';
 import drawPng from '../../img/draw.png';
 import losePng from '../../img/lose.png';
 import Preloader from '../home/Preloader';
+import { Helmet } from 'react-helmet';
 const URL = 'https://ligaeuropa.pythonanywhere.com/api/v1/';
 
 export default function Table(props) {
-
   const [data, setData] = useState([])
   async function getData(https) {
     await axios.get(`${URL}${https}`)
@@ -27,6 +27,12 @@ export default function Table(props) {
 
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>MPLiga Turnir jadvali</title>
+        <meta name='title' content='Mahalliy Premier Liga Turnir jadvali' />
+        <meta name="description" content="MPLiga turnir jadvali faqat ushba rasmiy veb saytimizda ko'ring" />
+      </Helmet>
       <div className="table">
         <div className="tp">
           <div className="container">
@@ -47,6 +53,7 @@ export default function Table(props) {
                   </tr>
                   {
                     data.map(item => {
+                      console.log(data);
                       return (
                         <tr key={item.id}>
                           <span className={`team-number ${i <= 3 ? 'liders' : ''} ${i === 4 ? 'tops' : ''} ${i >= 9 ? 'outsiders' : ''}`}>

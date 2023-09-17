@@ -1,11 +1,18 @@
 import React from 'react';
 import AllStatistica from './AllStatistica';
 import Preloader from '../home/Preloader';
+import { Helmet } from 'react-helmet';
 
 export default function Statistic() {
 
     return (
         <>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>MPLiga Statistika</title>
+                <meta name='title' content='Mahalliy Premier Liga statistika' />
+                <meta name="description" content="MPLiga so'ngi statistikasi to'p urarlar sariq va qizil kartochkalar statistikasi" />
+            </Helmet>
             <div className="statistica">
                 <div className="tp">
                     <div className="container">

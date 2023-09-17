@@ -5,11 +5,12 @@ import youtube from '../../img/youtube.png';
 import axios from 'axios';
 import { NavLink } from 'react-router-dom';
 import Preloader from '../home/Preloader';
+import { Helmet } from 'react-helmet';
 
 
 const URL = 'https://ligaeuropa.pythonanywhere.com/api/v1/';
 
-
+let anonsTime = 0;
 
 export default function Matches() {
 
@@ -32,21 +33,40 @@ export default function Matches() {
 
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>MPLiga Matchlar</title>
+        <meta name='title' content='Mahalliy Premier Liga Matchlari' />
+        <meta name="description" content="MPLiga barcha matchlaridan ushbu sayt orqali boxabar bo'ling" />
+      </Helmet>
       <div className="matches" title="match">
         <div className="tp">
           <div className="container">
             <Preloader data={data} />
             {
               data.map((item, index) => {
-                if (item.details.link) {
-
+                anonsTime++;
+                if (anonsTime > 6) {
+                  anonsTime = 1;
                 }
                 return (
                   <>
                     <NavLink to={`/match-${item.id}`} className="match-data" key={item.id}>
                       <h4 className="tour">
-                        {item.tour}
-                        <span>-tur</span>
+                        <div>
+                          {item.tour}
+                          <span>-tur</span>
+                        </div>
+                        <div className="match-date-time">
+                          {
+                            anonsTime === 1 ? '18:00' :
+                              anonsTime === 2 ? '19:00' :
+                                anonsTime === 3 ? '20:00' :
+                                  anonsTime === 4 ? '21:00' :
+                                    anonsTime === 5 ? '22:00' :
+                                      anonsTime === 6 ? '23:00' : ''}
+                        </div>
+
                       </h4>
                       <div className="match-data-flex">
                         <div className="match">
@@ -82,6 +102,7 @@ export default function Matches() {
                             <div className={`match-date-finished-${item.finished === 'да' ? 'true' : 'false'}`}>
                               {item.finished === 'да' ? "tugadi" : "bo'lmagan"}
                             </div>
+
                           </a>
                         </div>
                       </div>
